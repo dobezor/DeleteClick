@@ -1,0 +1,27 @@
+.container {
+  font-family: "Segoe UI", sans-serif;
+  width: 260px;
+  padding: 20px;
+  background: #f0f4f8;
+  color: #333;
+  text-align: center;
+}
+
+h1 {
+  color: #007bff;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+h2, h3 {
+  margin-top: 20px;
+  color: #333;
+}
+
+input[type="checkbox"] {
+  margin-left: 10px;
+}
+
+ul {
+  text-align: left;
+}
