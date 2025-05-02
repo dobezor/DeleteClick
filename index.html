@@ -3,55 +3,196 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DeleteClick - Удаление элементов с веб-страницы</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Подключаем Google Fonts для современного шрифта -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>DeleteClick</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, rgba(10, 10, 10, 1) 0%, rgba(18, 18, 18, 1) 100%);
+      color: #E0E0E0;
+      overflow-x: hidden;
+    }
+    .glass {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease;
+      border-radius: 12px;
+    }
+    .glass:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+    .neon-glow {
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.6);
+    }
+    .tilt-card {
+      transition: transform 0.4s ease-in-out, box-shadow 0.3s ease;
+      will-change: transform;
+    }
+    .tilt-card:hover {
+      transform: perspective(800px) rotateX(5deg) rotateY(5deg) scale(1.05);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    }
+    .pulse {
+      animation: pulse 2s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.9; }
+    }
+    .fade-in {
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .slide-in-left {
+      animation: slideInLeft 1.5s ease-out forwards;
+    }
+    @keyframes slideInLeft {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(0); }
+    }
+    .slide-in-right {
+      animation: slideInRight 1.5s ease-out forwards;
+    }
+    @keyframes slideInRight {
+      from { transform: translateX(100%); }
+      to { transform: translateX(0); }
+    }
+    .zoom-in {
+      animation: zoomIn 1s ease-out forwards;
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .neon-border {
+      animation: neonBorder 2s ease-in-out infinite alternate;
+    }
+    @keyframes neonBorder {
+      0% { border-color: #6c75d0; }
+      50% { border-color: #56b4b0; }
+      100% { border-color: #6c75d0; }
+    }
+    .hover-scale {
+      transition: transform 0.3s ease-in-out;
+    }
+    .hover-scale:hover {
+      transform: scale(1.05);
+    }
+    .button-glow {
+      position: relative;
+      padding: 16px 32px;
+      border-radius: 50px;
+      background: linear-gradient(to right, #6c75d0, #56b4b0);
+      color: white;
+      font-size: 18px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+      transition: all 0.4s ease;
+    }
+    .button-glow:hover {
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.7);
+      transform: scale(1.1);
+    }
+    .button-glow::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      background: rgba(0, 255, 255, 0.1);
+      border-radius: 50%;
+      transition: all 0.5s ease;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .button-glow:hover::before {
+      transform: translate(-50%, -50%) scale(0);
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <h1>DeleteClick</h1>
-      <p>Удаляйте элементы с веб-страниц с помощью правой кнопки мыши</p>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+    <h1 class="text-5xl md:text-6xl font-extrabold neon-glow mb-6 fade-in">
+      DeleteClick
+    </h1>
+    <p class="text-xl md:text-2xl text-gray-300 max-w-2xl slide-in-left">
+      Очистите экран за один клик — уберите визуальный шум, рекламу и ненужные элементы.
+    </p>
+    <a href="#" class="mt-10 inline-block px-8 py-3 rounded-full button-glow zoom-in">
+      Установить расширение
+    </a>
+  </section>
+
+  <!-- Features -->
+  <section class="py-24 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+    <div class="glass p-10 rounded-3xl tilt-card hover-glow slide-in-right">
+      <h2 class="text-3xl font-bold text-indigo-400 mb-4">
+        Удаление по клику
+      </h2>
+      <p class="text-gray-300 text-lg">Просто наведите и нажмите — элемент исчезает, освобождая экран от лишних объектов.</p>
     </div>
-  </header>
+    <div class="glass p-10 rounded-3xl tilt-card hover-glow slide-in-left">
+      <h2 class="text-3xl font-bold text-indigo-400 mb-4">
+        Минималистичный интерфейс
+      </h2>
+      <p class="text-gray-300 text-lg">Без лишних элементов, только функция очистки экрана.</p>
+    </div>
+  </section>
 
-  <main>
-    <section class="intro">
-      <h2>Что такое DeleteClick?</h2>
-      <p>DeleteClick — это расширение для браузера, которое позволяет удалять элементы с веб-страниц с помощью правой кнопки мыши. Вы можете быстро удалять ненужные элементы с сайта, такие как объявления, блоки рекламы или любые другие компоненты страницы.</p>
-    </section>
+  <!-- Interactive Demo -->
+  <section class="py-24 text-center bg-black/50 glass mx-6 rounded-3xl">
+    <h2 class="text-3xl font-bold text-indigo-400 mb-6 pulse-glow">
+      Попробуйте удалить элементы
+    </h2>
+    <p class="text-gray-400 mb-8 fade-in">Нажмите на блоки, чтобы увидеть анимацию удаления:</p>
+    <div class="flex flex-wrap justify-center gap-6 px-6 max-w-4xl mx-auto">
+      <div class="demo-card glass p-6 rounded-xl tilt-card cursor-pointer hover-glow bounce">
+        🧩 Рекламный баннер
+      </div>
+      <div class="demo-card glass p-6 rounded-xl tilt-card cursor-pointer hover-glow shake">
+        🎯 Попап
+      </div>
+      <div class="demo-card glass p-6 rounded-xl tilt-card cursor-pointer hover-glow zoom-in">
+        🎬 Всплывающее окно
+      </div>
+    </div>
+  </section>
 
-    <section class="features">
-      <h2>Основные функции</h2>
-      <ul>
-        <li><strong>Удаление элементов:</strong> Используйте правую кнопку мыши для удаления элементов с веб-страницы.</li>
-        <li><strong>Режим выделения:</strong> Выделите элементы на странице для их быстрого удаления.</li>
-        <li><strong>Настройки:</strong> Включите или выключите удаление и режим выделения через настройки расширения.</li>
-      </ul>
-    </section>
+  <!-- Contact -->
+  <section class="text-center py-24">
+    <h2 class="text-3xl font-bold text-indigo-400 mb-4 flip">
+      Свяжитесь с нами
+    </h2>
+    <p class="text-gray-400 mb-4 slide-in-left">Вопросы? Напишите нам, мы всегда готовы помочь!</p>
+    <a href="mailto:support@deleteclick.dev" class="inline-block px-6 py-3 bg-gradient-to-r from-indigo-500 to-teal-500 hover:from-teal-500 hover:to-indigo-500 rounded-full text-white text-lg transition flip-card">
+      support@deleteclick.dev
+    </a>
+  </section>
 
-    <section class="installation">
-      <h2>Как установить?</h2>
-      <p>Чтобы установить расширение, выполните следующие шаги:</p>
-      <ol>
-        <li>Перейдите в Chrome Web Store (или магазин вашего браузера).</li>
-        <li>Найдите расширение <strong>DeleteClick</strong>.</li>
-        <li>Нажмите кнопку "Добавить в Chrome".</li>
-        <li>После установки и активации вы сможете использовать все функции расширения.</li>
-      </ol>
-    </section>
-
-    <section class="contact">
-      <h2>Контакты</h2>
-      <p>Если у вас возникли вопросы или предложения, напишите нам:</p>
-      <p>Email: <a href="mailto:dobezor@gmail.com">dobezor@gmail.com</a></p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 DeleteClick. Все права защищены.</p>
+  <!-- Footer -->
+  <footer class="text-center py-8 text-sm text-gray-600 fade-in">
+    © 2025 DeleteClick — Очищайте веб-страницы быстро и эффективно.
   </footer>
 
+  <!-- JS -->
+  <script>
+    document.querySelectorAll('.demo-card').forEach(el => {
+      el.addEventListener('click', () => {
+        el.style.opacity = '0';
+        el.style.transition = 'opacity 0.3s ease';
+        setTimeout(() => el.remove(), 300);
+      });
+    });
+  </script>
 </body>
 </html>
