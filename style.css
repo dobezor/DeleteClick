@@ -1,27 +1,71 @@
-.container {
-  font-family: "Segoe UI", sans-serif;
-  width: 260px;
-  padding: 20px;
-  background: #f0f4f8;
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
   color: #333;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 20px 0;
   text-align: center;
 }
 
-h1 {
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+section h2 {
+  font-size: 1.8rem;
   color: #007bff;
-  font-size: 20px;
-  margin-bottom: 20px;
 }
 
-h2, h3 {
-  margin-top: 20px;
-  color: #333;
-}
-
-input[type="checkbox"] {
-  margin-left: 10px;
+section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 ul {
-  text-align: left;
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+ol {
+  margin-left: 20px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+footer {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
