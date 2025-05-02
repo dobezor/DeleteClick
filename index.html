@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>DeleteClick - Расширение для удаления элементов</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>DeleteClick - Удаление элементов с сайта</h1>
+    <p>Расширение позволяет удалять элементы с веб-страницы с помощью правой кнопки мыши.</p>
+
+    <h2>Функциональные возможности:</h2>
+    <ul>
+      <li><strong>Удаление элементов:</strong> Удалите любые элементы страницы с помощью правой кнопки мыши.</li>
+      <li><strong>Режим выделения:</strong> Выделяйте элементы на странице для их удаления с помощью кликов.</li>
+    </ul>
+
+    <h3>Настройки:</h3>
+    <div>
+      <label>
+        Удаление элементов:
+        <input type="checkbox" id="toggle-delete" />
+      </label>
+      <p id="status-delete">Выкл</p>
+
+      <label>
+        Режим выделения:
+        <input type="checkbox" id="toggle-highlight" />
+      </label>
+      <p id="status-highlight">Выкл</p>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
